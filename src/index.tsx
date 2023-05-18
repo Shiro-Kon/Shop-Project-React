@@ -18,11 +18,17 @@ import ReactDOM from 'react-dom/client'
 //     </div>
 // )
 
-//React Component (завжди приймає один елемент тому потрібно огорнути в div)
-const App = () => {
+const Title = () => {
     return (
         <div>
             <h1>Hello App component</h1>
+        </div>
+    )
+}
+
+const Content = () => {
+    return (
+        <React.Fragment>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
                 ducimus officia neque porro eveniet eligendi, delectus et sequi
@@ -35,7 +41,16 @@ const App = () => {
                 dignissimos quaerat doloribus est soluta dolorum iusto, dicta ex
                 tempore delectus illum totam aspernatur blanditiis.
             </p>
-        </div>
+        </React.Fragment>
+    )
+}
+//React Component (завжди приймає один елемент тому потрібно огорнути в div)
+const App = () => {
+    return (
+        <>
+            <Title />
+            <Content />
+        </>
     )
 }
 
