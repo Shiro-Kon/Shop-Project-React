@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import './style.css'
 
 //React Element
 // const title = React.createElement('hl', { id: 'title' }, 'Hello React')
@@ -19,17 +20,13 @@ import ReactDOM from 'react-dom/client'
 // )
 
 const Title = () => {
-    return (
-        <div>
-            <h1>Hello App component</h1>
-        </div>
-    )
+    return <h1>Hello App component</h1>
 }
 
 const Content = () => {
     return (
         <React.Fragment>
-            <p>
+            <p className="red">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
                 ducimus officia neque porro eveniet eligendi, delectus et sequi
                 inventore dolor eius rem quasi quo, ex maiores iure laudantium!
@@ -44,11 +41,13 @@ const Content = () => {
         </React.Fragment>
     )
 }
-//React Component (завжди приймає один елемент тому потрібно огорнути в div)
+
+//React Component (завжди приймає один елемент тому потрібно огорнути в div) a ще цей метот стрілкового запису
 const App = () => {
     return (
         <>
             <Title />
+            <Content />
             <Content />
         </>
     )
