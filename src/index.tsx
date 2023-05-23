@@ -2,23 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './style.css'
 
-//React Element
-// const title = React.createElement('hl', { id: 'title' }, 'Hello React')
-//console.log(title)
-
-//JSX (завжди один елемент)
-// const app = (
-//     <div>
-//         <h1 id="text">Hello App</h1>
-//         <p>
-//             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
-//             impedit adipisci tenetur minus corporis fugit assumenda sunt facere,
-//             distinctio cumque asperiores cupiditate quisquam sint doloribus,
-//             vitae ab voluptatum placeat obcaecati.
-//         </p>
-//     </div>
-// )
-
 const Title = () => {
     return <h1>Hello App component</h1>
 }
