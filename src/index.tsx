@@ -11,7 +11,7 @@ const App = () => {
             <Title title="App" />
             <Title title="React" num={1} />
             <Content
-                textl={
+                text1={
                     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione omnis debitis tempora repudiandae, voluptate reiciendis odit nostrum mollitia vero nobis doloremque officia magni delectus praesentium eum perspiciatis eligendi maxime.'
                 }
                 text2={
