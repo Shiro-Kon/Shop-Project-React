@@ -2,25 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './style.css'
 import Title from './Title'
-
-const Content = () => {
-    return (
-        <React.Fragment>
-            <p className="red">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                ducimus officia neque porro eveniet eligendi, delectus et sequi
-                inventore dolor eius rem quasi quo, ex maiores iure laudantium!
-                Error, iste?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic
-                quos officiis, impedit consequatur architecto nostrum
-                dignissimos quaerat doloribus est soluta dolorum iusto, dicta ex
-                tempore delectus illum totam aspernatur blanditiis.
-            </p>
-        </React.Fragment>
-    )
-}
+import { Content } from './Content' //іменований експорт
 
 //React Component (завжди приймає один елемент тому потрібно огорнути в div) a ще цей метот стрілкового запису
 const App = () => {
@@ -28,8 +10,14 @@ const App = () => {
         <>
             <Title title="App" />
             <Title title="React" num={1} />
-            <Content />
-            <Content />
+            <Content
+                textl={
+                    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione omnis debitis tempora repudiandae, voluptate reiciendis odit nostrum mollitia vero nobis doloremque officia magni delectus praesentium eum perspiciatis eligendi maxime.'
+                }
+                text2={
+                    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione omnis debitis tempora repudiandae, voluptate reiciendis odit nostrum mollitia vero nobis doloremque officia magni delectus praesentium eum perspiciatis eligendi maxime.'
+                }
+            />
         </>
     )
 }
