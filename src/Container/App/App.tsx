@@ -8,6 +8,7 @@ import { Container } from '@mui/material'
 import CartPage from 'pages/Cart/CartPage'
 import { createContext } from 'react'
 import { omit } from 'lodash'
+import ProductPage from 'pages/Product/ProductPage'
 
 type ProductsInCart = {
     [id: number]: number
@@ -72,6 +73,7 @@ const App = () => {
                                 <CartPage productsInCart={productsInCart} />
                             }
                         />
+                        <Route path="/products/:id" element={<ProductPage />} />
                     </Routes>
                 </Container>
             </AppContext.Provider>

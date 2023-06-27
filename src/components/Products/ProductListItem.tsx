@@ -1,16 +1,11 @@
-import {
-    Button,
-    Card,
-    CardActions,
-    CardContent,
-    TextField,
-} from '@mui/material'
+import { Button, Card, CardActions, CardContent } from '@mui/material'
 import './ProductListItem.scss'
 import { useState } from 'react'
 import Quantity from 'components/Quantity/Quantity'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useAppDispatch, useAppSelector } from 'Redux/Hooks';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import { useAppDispatch, useAppSelector } from 'Redux/Hooks'
+import { Link } from 'react-router-dom'
 
 type Props = {
     id: number
@@ -41,25 +36,35 @@ const ProductListItem = ({
     const onDecrementClick = () => {
         setCount((prevState) => prevState - 1)
     }
-
-    const isLiked = useAppSelector((state) => state.productsLikeState [id])
-
+    const isLiked = useAppSelector((state) => state.productsLikeState[id])
     const dispatch = useAppDispatch()
 
     return (
         <Card className="product" variant="outlined">
             <CardContent>
-                <Button variant='outlined' onClick={() => dispatch({
-                    type: 'TOGGLE_LIKE',
-                    id,
-                })}>
+                <Button
+                    variant="outlined"
+                    onClick={() =>
+                        dispatch({
+                            type: 'TOGGLE_LIKE',
+                            id,
+                        })
+                    }
+                >
                     {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                 </Button>
                 <div className="product-img">
                     <img src={image} alt="" />
                 </div>
-                <h4 className="product-title">{title}</h4>
-                <div className="product-description">{description}</div>
+                <h4 className="product-title">
+                    <Link to={`/products/${id}`}>{title}</Link>
+                </h4>
+                <div
+                    className="product-description"
+                    dangerouslySetInnerHTML={{
+                        __html: description,
+                    }}
+                ></div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Capacity: {capacity}Gb</div>
                 <div className="product-price">Price: $ {price}</div>
